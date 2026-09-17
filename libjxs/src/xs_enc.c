@@ -79,6 +79,9 @@
 #include "dwt.h"
 #include "mct.h"
 #include "nlt.h"
+#ifdef JXS_ENABLE_OPENMP
+#include <omp.h>
+#endif
 
 struct xs_enc_context_t
 {
@@ -92,6 +95,7 @@ struct xs_enc_context_t
 	int bitstream_len;
 
 	rate_control_t* rc[MAX_PREC_COLS];
+	rc_results_t* rc_results;
 };
 
 xs_enc_context_t* xs_enc_init(xs_config_t* xs_config, xs_image_t* image)
@@ -120,6 +124,13 @@ xs_enc_context_t* xs_enc_init(xs_config_t* xs_config, xs_image_t* image)
 	}
 
 	ids_construct(&ctx->ids, image, xs_config->p.NLx, xs_config->p.NLy, xs_config->p.Sd, xs_config->p.Cw, xs_config->p.Lh);
+	ctx->rc_results = calloc(ctx->ids.npx, sizeof(rc_results_t));
+	if (!ctx->rc_results)
+	{
+		fprintf(stderr, "Unable to allocate precinct-column results\n");
+		free(ctx);
+		return NULL;
+	}
 
 	for (int column = 0; column < ctx->ids.npx; column++)
 	{
@@ -152,6 +163,7 @@ void xs_enc_close(xs_enc_context_t* ctx)
 		rate_control_close(ctx->rc[i]);
 	}
 
+	free(ctx->rc_results);
 	free(ctx);
 }
 
@@ -215,9 +227,9 @@ bool _xs_enc_init_column_rates(xs_enc_context_t* ctx, const int width, const int
 
 bool xs_enc_image(xs_enc_context_t* ctx, xs_image_t* image, void* codestream_buf, size_t codestream_buf_byte_size, size_t* codestream_byte_size)
 {
-	rc_results_t rc_results;
 	int slice_idx = 0;
 	int markers_len = 0;
+	bool success = true;
 
 	if ((ctx->xs_config->bitstream_size_in_bytes != (size_t)-1) && (codestream_buf_byte_size / 8) * 8 < ctx->xs_config->bitstream_size_in_bytes)
 	{
@@ -242,40 +254,64 @@ bool xs_enc_image(xs_enc_context_t* ctx, xs_image_t* image, void* codestream_buf
 	mct_forward_transform(image, &(ctx->xs_config->p));
 	dwt_forward_transform(&ctx->ids, image);
 
-	for (int line_idx = 0; line_idx < image->height; line_idx += ctx->ids.ph)
+	// Column histories are independent; packing stays in codestream order.
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel if(ctx->ids.npx > 1 && omp_get_level() == 0) num_threads(ctx->ids.npx < omp_get_max_threads() ? ctx->ids.npx : omp_get_max_threads())
+#endif
 	{
-		const int prec_y_idx = (line_idx / ctx->ids.ph);
-		for (int column = 0; column < ctx->ids.npx; ++column)
+		for (int line_idx = 0; line_idx < image->height; line_idx += ctx->ids.ph)
 		{
-			precinct_set_y_idx_of(ctx->precinct[column], prec_y_idx);
-			precinct_from_image(ctx->precinct[column], image, ctx->xs_config->p.Fq);
-
-			update_gclis(ctx->precinct[column]);
-
-			if (rate_control_process_precinct(ctx->rc[column], ctx->precinct[column], &rc_results) < 0) {
-				return false;
-			}
-
-			quantize_precinct(ctx->precinct[column], rc_results.gtli_table_data, ctx->xs_config->p.Qpih);
-
-			if (precinct_is_first_of_slice(ctx->precinct[column], ctx->xs_config->p.slice_height) && (column == 0))
+			const int prec_y_idx = line_idx / ctx->ids.ph;
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp for schedule(static)
+#endif
+			for (int column = 0; column < ctx->ids.npx; ++column)
 			{
-				if (ctx->xs_config->verbose > 2)
+				rc_results_t* result = &ctx->rc_results[column];
+				precinct_set_y_idx_of(ctx->precinct[column], prec_y_idx);
+				precinct_from_image(ctx->precinct[column], image, ctx->xs_config->p.Fq);
+				update_gclis(ctx->precinct[column]);
+				if (rate_control_process_precinct(ctx->rc[column], ctx->precinct[column], result) < 0)
 				{
-					fprintf(stderr, "Write Slice Header (slice_idx=%d)\n", slice_idx);
+					result->rc_error = 1;
 				}
-				markers_len += xs_write_slice_header(ctx->bitstream, slice_idx++);
+				else
+				{
+					quantize_precinct(ctx->precinct[column], result->gtli_table_data, ctx->xs_config->p.Qpih);
+				}
 			}
-
-			if (pack_precinct(ctx->packer, ctx->bitstream, ctx->precinct[column], &rc_results) < 0)
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp single
+#endif
 			{
-				return false;
+				for (int column = 0; column < ctx->ids.npx; ++column)
+				{
+					rc_results_t* result = &ctx->rc_results[column];
+					if (result->rc_error)
+					{
+						success = false;
+						break;
+					}
+					if (column == 0 && precinct_is_first_of_slice(ctx->precinct[column], ctx->xs_config->p.slice_height))
+					{
+						if (ctx->xs_config->verbose > 2)
+							fprintf(stderr, "Write Slice Header (slice_idx=%d)\n", slice_idx);
+						markers_len += xs_write_slice_header(ctx->bitstream, slice_idx++);
+					}
+					if (pack_precinct(ctx->packer, ctx->bitstream, ctx->precinct[column], result) < 0)
+					{
+						success = false;
+						break;
+					}
+				}
 			}
-
-			if (rc_results.rc_error == 1)
+			// The single-region barrier publishes failure before every worker exits.
+			if (!success)
 				break;
 		}
 	}
+	if (!success)
+		return false;
 
 	xs_write_tail(ctx->bitstream);	
 	assert((ctx->xs_config->bitstream_size_in_bytes == (size_t)-1) || bitpacker_get_len(ctx->bitstream) / 8 == ctx->xs_config->bitstream_size_in_bytes);

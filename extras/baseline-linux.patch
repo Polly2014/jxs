@@ -1,0 +1,22 @@
+diff --git a/programs/cmdline_options.c b/programs/cmdline_options.c
+--- a/programs/cmdline_options.c
++++ b/programs/cmdline_options.c
+@@ -219,12 +219,15 @@ JXS_SHARED_LIB_API int cmdline_options_parse(int argc, char **argv, cmdline_opt_app_
+-			int ok = strcat_s(options->xs_config_string, sizeof(options->xs_config_string) - 2, optarg);
+-			ok |= strcat_s(options->xs_config_string, sizeof(options->xs_config_string) - 1, ";");
+-			if (ok != 0)
++			const size_t used = strlen(options->xs_config_string);
++			const size_t added = strlen(optarg);
++			if (added > sizeof(options->xs_config_string) - used - 2)
+ 			{
+ 				fprintf(stderr, "Error while handling -c option\n");
+ 				return -1;
+ 			}
++			memcpy(options->xs_config_string + used, optarg, added);
++			options->xs_config_string[used + added] = ';';
++			options->xs_config_string[used + added + 1] = '\0';
+ 			break;
+ 		}
+ 		case 'D':
+ 		{
+ 			++options->dump_xs_cfg;

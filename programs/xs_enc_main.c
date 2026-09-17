@@ -63,13 +63,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
+#ifdef JXS_ENABLE_OPENMP
+#include <omp.h>
+#endif
 
-int main(int argc, char **argv)
+static int encode_sequence(cmdline_options_t options, const char* input_seq_n, const char* output_seq_n)
 {
 	xs_config_t xs_config;
 	xs_image_t image = { 0 };
-	char* input_seq_n = NULL;
-	char* output_seq_n = NULL;
 	char* input_fn = NULL;
 	char* output_fn = NULL;
 	uint8_t* bitstream_buf = NULL;
@@ -77,36 +79,18 @@ int main(int argc, char **argv)
 	xs_enc_context_t* ctx = NULL;
 	int ret = 0;
 	int file_idx = 0;
-	cmdline_options_t options;
-	int optind;
-
-	fprintf(stderr, "JPEG XS test model (XSM) version %s\n", xs_get_version_str());
-	
 	do
 	{
-		if ((optind = cmdline_options_parse(argc, argv, CMDLINE_OPT_ENCODER, &options)) < 0)
-		{
-			ret = -1;
-			break;
-		}
-
-		if (argc - optind != 2)
-		{
-			fprintf(stderr, "\nSingle image: %s [options] <image_in.ext> <output.jxs>\n", argv[0]);
-			fprintf(stderr, "\nFor sequences: %s [options] <sequence_in_%%06d.dpx> <output_%%06d.jxs>\n\n", argv[0]);
-			fprintf(stderr, "Options:\n");
-			cmdline_options_print_usage(CMDLINE_OPT_ENCODER);
-			ret = -1;
-			break;
-		}
-
 		xs_config.verbose = options.verbose;
-
-		input_seq_n = argv[optind];
-		output_seq_n = argv[optind + 1];
 
 		input_fn = malloc(strlen(input_seq_n) + MAX_SEQ_NUMBER_DIGITS);
 		output_fn = malloc(strlen(output_seq_n) + MAX_SEQ_NUMBER_DIGITS);
+		if (!input_fn || !output_fn)
+		{
+			fprintf(stderr, "Unable to allocate sequence paths\n");
+			ret = -1;
+			break;
+		}
 
 		sequence_get_filepath(input_seq_n, input_fn, file_idx + options.sequence_first);
 		if (image_open_auto(input_fn, &image, options.width, options.height, options.depth) < 0)
@@ -243,4 +227,91 @@ int main(int argc, char **argv)
 		free(bitstream_buf);
 	}
 	return ret;
+}
+
+#ifdef JXS_ENABLE_OPENMP
+static bool parallel_sequence_pattern(const char* path)
+{
+	int conversions = 0;
+	for (const char* p = path; *p; ++p)
+	{
+		if (*p != '%')
+			continue;
+		++p;
+		if (*p == '0')
+		{
+			++p;
+			int width = 0;
+			while (*p >= '0' && *p <= '9')
+			{
+				width = width * 10 + (*p++ - '0');
+				if (width > 10)
+					return false;
+			}
+			if (width == 0)
+				return false;
+		}
+		if (*p != 'd' || ++conversions > 1)
+			return false;
+	}
+	return conversions == 1;
+}
+#endif
+
+int main(int argc, char** argv)
+{
+	cmdline_options_t options;
+	fprintf(stderr, "JPEG XS test model (XSM) version %s\n", xs_get_version_str());
+	const int first_arg = cmdline_options_parse(argc, argv, CMDLINE_OPT_ENCODER, &options);
+	if (first_arg < 0)
+		return -1;
+	if (argc - first_arg != 2)
+	{
+		fprintf(stderr, "\nSingle image: %s [options] <image_in.ext> <output.jxs>\n", argv[0]);
+		fprintf(stderr, "\nFor sequences: %s [options] <sequence_in_%%06d.ppm> <output_%%06d.jxs>\n\n", argv[0]);
+		cmdline_options_print_usage(CMDLINE_OPT_ENCODER);
+		return -1;
+	}
+	if (options.jobs == 1)
+		return encode_sequence(options, argv[first_arg], argv[first_arg + 1]);
+#ifndef JXS_ENABLE_OPENMP
+	fprintf(stderr, "-j > 1 requires a build with JXS_ENABLE_OPENMP=ON\n");
+	return -1;
+#else
+	if (options.sequence_n <= 0 || options.sequence_first < 0 ||
+		(int64_t)options.sequence_first + options.sequence_n - 1 > INT_MAX ||
+		!parallel_sequence_pattern(argv[first_arg]) ||
+		!parallel_sequence_pattern(argv[first_arg + 1]) || options.dump_xs_cfg)
+	{
+		fprintf(stderr, "Parallel sequences require -n > 0, nonnegative indices, no -D, and one %%d or %%0Nd (N=1..10) in each path\n");
+		return -1;
+	}
+	int failed = 0;
+	const int workers = options.jobs < options.sequence_n ? options.jobs : options.sequence_n;
+	// Each job owns its image, configuration, codec context and output buffer.
+	// Library kernels detect this active region and do not nest thread teams.
+#pragma omp parallel for schedule(dynamic, 1) num_threads(workers) reduction(|:failed)
+	for (int frame = 0; frame < options.sequence_n; ++frame)
+	{
+		const size_t input_size = strlen(argv[first_arg]) + MAX_SEQ_NUMBER_DIGITS;
+		const size_t output_size = strlen(argv[first_arg + 1]) + MAX_SEQ_NUMBER_DIGITS;
+		char* input = malloc(input_size);
+		char* output = malloc(output_size);
+		if (!input || !output)
+		{
+			fprintf(stderr, "Unable to allocate frame paths\n");
+			failed |= 1;
+		}
+		else
+		{
+			snprintf(input, input_size, argv[first_arg], options.sequence_first + frame);
+			snprintf(output, output_size, argv[first_arg + 1], options.sequence_first + frame);
+			if (encode_sequence(options, input, output) != 0)
+				failed |= 1;
+		}
+		free(input);
+		free(output);
+	}
+	return failed ? -1 : 0;
+#endif
 }

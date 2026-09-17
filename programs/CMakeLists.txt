@@ -48,6 +48,9 @@ target_link_libraries(jxs_utils PUBLIC jxs ${M_LIBRARY})
 
 add_executable(jxs_encoder xs_enc_main.c)
 target_link_libraries(jxs_encoder jxs jxs_utils)
+if(JXS_ENABLE_OPENMP)
+    target_compile_definitions(jxs_encoder PRIVATE JXS_ENABLE_OPENMP=1)
+endif()
 
 add_executable(jxs_decoder xs_dec_main.c)
 target_link_libraries(jxs_decoder jxs jxs_utils)

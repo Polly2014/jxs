@@ -73,6 +73,7 @@ struct cmdline_options_t
 	int depth;
 	int sequence_first;
 	int sequence_n;
+	int jobs;
 	int verbose;
 	int dump_xs_cfg;
 	char fragments_csv_file[256];

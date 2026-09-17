@@ -117,6 +117,7 @@ void packer_close(packing_context_t* ctx)
 		sigbuffer_close(ctx->gcli_significance);
 	if (ctx->gcli_nonsig_flags)
 		sigbuffer_close(ctx->gcli_nonsig_flags);
+	free(ctx);
 }
 
 unpacking_context_t* unpacker_open(const xs_config_t* xs_config, const precinct_t* prec)

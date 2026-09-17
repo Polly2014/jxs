@@ -138,7 +138,12 @@ int main(int argc, char **argv)
 			break;
 		}
 
-		fileio_read(input_fn, bitstream_buf, &bitstream_buf_size, bitstream_buf_max_size);
+		if (fileio_read(input_fn, bitstream_buf, &bitstream_buf_size, bitstream_buf_max_size) < 0)
+		{
+			fprintf(stderr, "Unable to read codestream %s\n", input_fn);
+			ret = -1;
+			break;
+		}
 
 
 		if (!xs_dec_probe(bitstream_buf, bitstream_buf_size, &xs_config, &image))
@@ -247,7 +252,7 @@ int main(int argc, char **argv)
 					break;
 				}
 			}
-			if (!xs_dec_bitstream(ctx, bitstream_buf, bitstream_buf_max_size, &image, file_idx))
+			if (!xs_dec_bitstream(ctx, bitstream_buf, bitstream_buf_size, &image, file_idx))
 			{
 				fprintf(stderr, "Error while decoding the codestream\n");
 				ret = -1;
@@ -277,12 +282,52 @@ int main(int argc, char **argv)
 				break;
 			}
 
+			if (options.sequence_n > 0 && file_idx + 1 >= options.sequence_n)
+				break;
+
+			xs_free_image(&image);
+			xs_dec_close(ctx);
+			ctx = NULL;
 			memset(&xs_config, 0, sizeof(xs_config));
 			memset(&image, 0, sizeof(image));
 
 			file_idx++;
 			sequence_get_filepath(input_seq_n, input_fn, file_idx + options.sequence_first);
-		} while (ret == 0 && fileio_read(input_fn, bitstream_buf, &bitstream_buf_size, bitstream_buf_max_size) >= 0);
+			if (!fileio_exists(input_fn))
+			{
+				if (options.sequence_n > 0)
+				{
+					fprintf(stderr, "Missing requested sequence frame %s\n", input_fn);
+					ret = -1;
+				}
+				break;
+			}
+			const size_t next_size = fileio_getsize(input_fn);
+			if (next_size > bitstream_buf_max_size)
+			{
+				if (next_size > SIZE_MAX - 8)
+				{
+					fprintf(stderr, "Codestream is too large: %s\n", input_fn);
+					ret = -1;
+					break;
+				}
+				uint8_t* grown = realloc(bitstream_buf, (next_size + 8) & ~(size_t)7);
+				if (!grown)
+				{
+					fprintf(stderr, "Unable to grow sequence codestream buffer\n");
+					ret = -1;
+					break;
+				}
+				bitstream_buf = grown;
+				bitstream_buf_max_size = next_size;
+			}
+			if (fileio_read(input_fn, bitstream_buf, &bitstream_buf_size, bitstream_buf_max_size) < 0)
+			{
+				fprintf(stderr, "Unable to read sequence frame %s\n", input_fn);
+				ret = -1;
+				break;
+			}
+		} while (ret == 0);
 	} while (false);
 
 	// Cleanup.

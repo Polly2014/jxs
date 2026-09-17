@@ -4,7 +4,7 @@
 # See LICENSE.md for copyright and licensing conditions.
 # ============================================================================
 
-cmake_minimum_required(VERSION 3.9.6)
+cmake_minimum_required(VERSION 3.12)
 
 # Parse version from version.h.
 file(READ "libjxs/src/version.h" _VER_FILE)
@@ -23,6 +23,11 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+option(JXS_ENABLE_OPENMP "Enable CPU parallel transforms and precinct-column analysis" OFF)
+if(JXS_ENABLE_OPENMP)
+    find_package(OpenMP REQUIRED COMPONENTS C)
+endif()
 
 # Get everything into one final folder.
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
@@ -48,3 +53,13 @@ add_subdirectory(libjxs)
 
 # XS Utils library and executables.
 add_subdirectory(programs)
+
+include(CTest)
+if(BUILD_TESTING)
+    find_package(Python3 QUIET COMPONENTS Interpreter)
+    if(Python3_Interpreter_FOUND)
+        add_test(NAME codec_regression
+            COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/extras/regression.py"
+                --bin "$<TARGET_FILE_DIR:jxs_encoder>" --openmp "${JXS_ENABLE_OPENMP}")
+    endif()
+endif()

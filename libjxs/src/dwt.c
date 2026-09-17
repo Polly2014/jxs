@@ -26,7 +26,7 @@
 ** made, by implication, estoppel or otherwise.                           **
 **                                                                        **
 ** Disclaimer: Other than as expressly provided herein, (1) the Software  **
-** is provided “AS IS” WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING  **
+** is provided ï¿½AS ISï¿½ WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING  **
 ** BUT NOT LIMITED TO, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A   **
 ** PARTICULAR PURPOSE AND NON-INFRINGMENT OF INTELLECTUAL PROPERTY RIGHTS **
 ** and (2) neither the Software Copyright Holder (or its affiliates) nor  **
@@ -34,7 +34,7 @@
 ** (including, without limitation, damages for loss of profits, business  **
 ** interruption, loss of information, or any other pecuniary loss)        **
 ** arising out of or related to the use of or inability to use the        **
-** Software.”                                                             **
+** Software.ï¿½                                                             **
 **                                                                        **
 ** RAND Copyright Licensing Commitment                                    **
 ** -----------------------------------                                    **
@@ -54,6 +54,9 @@
 
 #include "dwt.h"
 #include <assert.h>
+#ifdef JXS_ENABLE_OPENMP
+#include <omp.h>
+#endif
 
 typedef void (*filter_func_t)(xs_data_in_t* const base, xs_data_in_t* const end, const ptrdiff_t inc);
 
@@ -116,11 +119,15 @@ void dwt_tranform_vertical_(const ids_t* ids, xs_image_t* im, const int k, const
 	assert(h_level >= 0 && v_level >= 0);
 	const ptrdiff_t x_inc = (ptrdiff_t)1 << h_level;
 	const ptrdiff_t y_inc = (ptrdiff_t)ids->comp_w[k] << v_level;
-	xs_data_in_t* base = im->comps_array[k];
-	xs_data_in_t* const end = base + ids->comp_w[k];
-	for (; base < end; base += x_inc)
+	const ptrdiff_t width = ids->comp_w[k];
+	const size_t samples = (size_t)width * (size_t)ids->comp_h[k];
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel for schedule(static) if(samples >= 262144 && omp_get_level() == 0)
+#endif
+	for (ptrdiff_t x = 0; x < width; x += x_inc)
 	{
-		xs_data_in_t* const col_end = base + (size_t)ids->comp_w[k] * (size_t)ids->comp_h[k];
+		xs_data_in_t* const base = im->comps_array[k] + x;
+		xs_data_in_t* const col_end = base + samples;
 		filter(base, col_end, y_inc);
 	}
 }
@@ -130,10 +137,13 @@ void dwt_tranform_horizontal_(const ids_t* ids, xs_image_t* im, const int k, con
 	assert(h_level >= 0 && v_level >= 0);
 	const ptrdiff_t x_inc = (ptrdiff_t)1 << h_level;
 	const ptrdiff_t y_inc = (ptrdiff_t)ids->comp_w[k] << v_level;
-	xs_data_in_t* base = im->comps_array[k];
-	xs_data_in_t* const end = base + (size_t)ids->comp_w[k] * (size_t)ids->comp_h[k];
-	for (; base < end; base += y_inc)
+	const ptrdiff_t rows = (ids->comp_h[k] + (1 << v_level) - 1) >> v_level;
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel for schedule(static) if((size_t)rows * ids->comp_w[k] >= 262144 && omp_get_level() == 0)
+#endif
+	for (ptrdiff_t y = 0; y < rows; ++y)
 	{
+		xs_data_in_t* const base = im->comps_array[k] + y * y_inc;
 		xs_data_in_t* const row_end = base + ids->comp_w[k];
 		filter(base, row_end, x_inc);
 	}

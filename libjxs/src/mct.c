@@ -26,7 +26,7 @@
 ** made, by implication, estoppel or otherwise.                           **
 **                                                                        **
 ** Disclaimer: Other than as expressly provided herein, (1) the Software  **
-** is provided “AS IS” WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING  **
+** is provided ï¿½AS ISï¿½ WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING  **
 ** BUT NOT LIMITED TO, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A   **
 ** PARTICULAR PURPOSE AND NON-INFRINGMENT OF INTELLECTUAL PROPERTY RIGHTS **
 ** and (2) neither the Software Copyright Holder (or its affiliates) nor  **
@@ -34,7 +34,7 @@
 ** (including, without limitation, damages for loss of profits, business  **
 ** interruption, loss of information, or any other pecuniary loss)        **
 ** arising out of or related to the use of or inability to use the        **
-** Software.”                                                             **
+** Software.ï¿½                                                             **
 **                                                                        **
 ** RAND Copyright Licensing Commitment                                    **
 ** -----------------------------------                                    **
@@ -58,6 +58,9 @@
 #include <assert.h>
 #include <malloc.h>
 #include <stdio.h>
+#ifdef JXS_ENABLE_OPENMP
+#include <omp.h>
+#endif
 
 void swap_ptr(xs_data_in_t** p1, xs_data_in_t** p2)
 {
@@ -73,14 +76,16 @@ void mct_forward_rct(xs_image_t* im)
 	xs_data_in_t* c0 = im->comps_array[0]; // R
 	xs_data_in_t* c1 = im->comps_array[1]; // G
 	xs_data_in_t* c2 = im->comps_array[2]; // B
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel for schedule(static) if(len >= 262144 && omp_get_level() == 0)
+#endif
 	for (int i = 0; i < len; ++i)
 	{
-		const xs_data_in_t g = *c1;
-		const xs_data_in_t tmp = (*c0 + 2 * g + *c2) >> 2;
-		*c1 = *c2 - g;
-		*c2 = *c0 - g;
-		*c0 = tmp;
-		++c0; ++c1; ++c2;
+		const xs_data_in_t g = c1[i];
+		const xs_data_in_t tmp = (c0[i] + 2 * g + c2[i]) >> 2;
+		c1[i] = c2[i] - g;
+		c2[i] = c0[i] - g;
+		c0[i] = tmp;
 	}
 }
 
@@ -91,13 +96,15 @@ void mct_inverse_rct(xs_image_t* im)
 	xs_data_in_t* c0 = im->comps_array[0];
 	xs_data_in_t* c1 = im->comps_array[1];
 	xs_data_in_t* c2 = im->comps_array[2];
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel for schedule(static) if(len >= 262144 && omp_get_level() == 0)
+#endif
 	for (int i = 0; i < len; ++i)
 	{
-		const xs_data_in_t tmp = *c0 - ((*c1 + *c2) >> 2);
-		*c0 = tmp + *c2;
-		*c2 = tmp + *c1;
-		*c1 = tmp;
-		++c0; ++c1; ++c2;
+		const xs_data_in_t tmp = c0[i] - ((c1[i] + c2[i]) >> 2);
+		c0[i] = tmp + c2[i];
+		c2[i] = tmp + c1[i];
+		c1[i] = tmp;
 	}
 }
 

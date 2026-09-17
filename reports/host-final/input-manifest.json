@@ -1,0 +1,203 @@
+{
+  "sources": [
+    {
+      "name": "astronaut.png",
+      "url": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/astronaut.png",
+      "attribution": "NASA: astronaut Eileen Collins, public domain",
+      "license_url": "https://scikit-image.org/docs/0.19.x/api/skimage.data.html#skimage.data.astronaut",
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+      "bytes": 791555
+    },
+    {
+      "name": "mars.jpg",
+      "url": "https://images-assets.nasa.gov/image/PIA04921/PIA04921~orig.jpg",
+      "attribution": "NASA/JPL, PIA04921; NASA media usage guidelines apply",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sha256": "4c2bc14dccd339b73c55cba14d3c18a63c4609041c375be18c442ee13153a274",
+      "bytes": 4334335
+    },
+    {
+      "name": "bbb.zip",
+      "url": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4.zip",
+      "attribution": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org",
+      "license_url": "https://peach.blender.org/about/",
+      "license": "CC BY 3.0",
+      "sha256": "109e3ede8790bd633f374ca311d9cc61dce8d7f98f5b0797ca98199c9fbceedf",
+      "bytes": 64657225
+    }
+  ],
+  "ffmpeg": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+  "video_sha256": "f78f39603e6774907f2faafabf26a667f4a6fc31769ec304a8a8f7c62d280508",
+  "cases": [
+    {
+      "name": "astronaut",
+      "input": "astronaut.ppm",
+      "width": 512,
+      "height": 512,
+      "source": "astronaut.png",
+      "operation": "RGB conversion, native 512x512",
+      "sha256": "07b5a5bf3b50328f1fa86ed445d32031588049d28add8eacaa382f683c933b07",
+      "depth": 8
+    },
+    {
+      "name": "astronaut_odd",
+      "input": "astronaut_odd.pgm",
+      "width": 509,
+      "height": 507,
+      "source": "astronaut.png",
+      "operation": "grayscale and odd-size crop",
+      "sha256": "ada8f0bcdf150d44c604b27d73d719a0054193c369f41e10a715533306c2e388",
+      "depth": 8
+    },
+    {
+      "name": "astronaut_12",
+      "input": "astronaut_12.pgm",
+      "width": 509,
+      "height": 507,
+      "source": "astronaut.png",
+      "operation": "8-bit grayscale expanded to 12-bit container; not native HDR data",
+      "sha256": "0aad460055b83d5b59de0d6dd351c3ecf390664da963901c0533871f11beb3ea",
+      "depth": 12
+    },
+    {
+      "name": "mars_1920",
+      "input": "mars_1920.ppm",
+      "width": 1920,
+      "height": 1080,
+      "source": "mars.jpg",
+      "operation": "center-crop/resample from (6200, 6200); derived load case, not native sensor dimensions",
+      "sha256": "1fdd20f4733c9b7e74eee6a0ab2d65535062302681cb921fbb52dca392bf8bda",
+      "depth": 8
+    },
+    {
+      "name": "mars_3840",
+      "input": "mars_3840.ppm",
+      "width": 3840,
+      "height": 2160,
+      "source": "mars.jpg",
+      "operation": "center-crop/resample from (6200, 6200); derived load case, not native sensor dimensions",
+      "sha256": "e617353dd7c59ab5e859f2204e9b902129276f5ac04b28e3bdbbf631116d8c62",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0001",
+      "input": "bbb_0001.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 1, seek=60s; not camera footage",
+      "sha256": "06275e83ab2fa3ba280110be88c9d71affe348a9eb7320b817142412b6e15901",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0002",
+      "input": "bbb_0002.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 2, seek=60s; not camera footage",
+      "sha256": "54748cda70155157f5402b2c31d861fe31b7d07e36235c6d3161c6a67b8c68bf",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0003",
+      "input": "bbb_0003.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 3, seek=60s; not camera footage",
+      "sha256": "bfd97c27dc6a1f4ebd195eaf30044c950d707a81e01ca49eac24c5bc827eeb2d",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0004",
+      "input": "bbb_0004.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 4, seek=60s; not camera footage",
+      "sha256": "765bd295d1bb3ab5a86585b6b897fb7504f8e6a7f9d4d53248790216170dc13f",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0005",
+      "input": "bbb_0005.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 5, seek=60s; not camera footage",
+      "sha256": "b05c1ec8f534368c45574b1ea5becd17833af0a4ff0c5a0c1c127bb388a191b6",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0006",
+      "input": "bbb_0006.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 6, seek=60s; not camera footage",
+      "sha256": "08cfc2548090ef4c0fbd91bff1884ac6593a7fb671818b2040bd19e10f58bae9",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0007",
+      "input": "bbb_0007.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 7, seek=60s; not camera footage",
+      "sha256": "1c098b34c03e36311597365cfab32a25cc53a9fad320327daa0401e93045e64f",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0008",
+      "input": "bbb_0008.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 8, seek=60s; not camera footage",
+      "sha256": "22e5a098df8a4de0857e2fa89b564c9d0e754dcf256d8c5611ec32aeb24f2b93",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0009",
+      "input": "bbb_0009.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 9, seek=60s; not camera footage",
+      "sha256": "caf16433e11bd3a5ee2d6e6c536ffe39be1cace688b3074dede38d8dbca2b080",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0010",
+      "input": "bbb_0010.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 10, seek=60s; not camera footage",
+      "sha256": "46d1645c7f147964491eff3d8f19094939d20faf00035c686325787b4e0f77c8",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0011",
+      "input": "bbb_0011.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 11, seek=60s; not camera footage",
+      "sha256": "7d71c8fb4d9d44cd9f61bda77dec69a7363e0a8604af603026ab63a6bd7c8435",
+      "depth": 8
+    },
+    {
+      "name": "bbb_0012",
+      "input": "bbb_0012.ppm",
+      "width": 320,
+      "height": 180,
+      "source": "bbb.zip",
+      "operation": "consecutive decoded animation frame 12, seek=60s; not camera footage",
+      "sha256": "0616439db9819e9f30bf74a635be0e924c5e04c1a9b4f8226ac38c16b462e70d",
+      "depth": 8
+    }
+  ]
+}

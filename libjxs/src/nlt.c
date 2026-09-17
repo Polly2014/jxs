@@ -26,7 +26,7 @@
 ** made, by implication, estoppel or otherwise.                           **
 **                                                                        **
 ** Disclaimer: Other than as expressly provided herein, (1) the Software  **
-** is provided “AS IS” WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING  **
+** is provided ï¿½AS ISï¿½ WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING  **
 ** BUT NOT LIMITED TO, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A   **
 ** PARTICULAR PURPOSE AND NON-INFRINGMENT OF INTELLECTUAL PROPERTY RIGHTS **
 ** and (2) neither the Software Copyright Holder (or its affiliates) nor  **
@@ -34,7 +34,7 @@
 ** (including, without limitation, damages for loss of profits, business  **
 ** interruption, loss of information, or any other pecuniary loss)        **
 ** arising out of or related to the use of or inability to use the        **
-** Software.”                                                             **
+** Software.ï¿½                                                             **
 **                                                                        **
 ** RAND Copyright Licensing Commitment                                    **
 ** -----------------------------------                                    **
@@ -55,6 +55,9 @@
 #include "nlt.h"
 #include "common.h"
 #include <assert.h>
+#ifdef JXS_ENABLE_OPENMP
+#include <omp.h>
+#endif
 
 static INLINE xs_data_in_t clamp(xs_data_in_t v, xs_data_in_t max_v)
 {
@@ -110,10 +113,12 @@ void nlt_inverse_linear(xs_image_t* im, const uint8_t Bw)
 		assert(im->sy[c] == 1 || im->sy[c] == 2);
 		const size_t sample_count = (size_t)(im->width / im->sx[c]) * (size_t)(im->height / im->sy[c]);
 		xs_data_in_t* the_ptr = im->comps_array[c];
-		for (size_t i = sample_count; i != 0; --i)
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel for schedule(static) if(sample_count >= 262144 && omp_get_level() == 0)
+#endif
+		for (ptrdiff_t i = 0; i < (ptrdiff_t)sample_count; ++i)
 		{
-			*the_ptr = clamp((*the_ptr + dclev_and_rounding) >> s, max_val);
-			++the_ptr;
+			the_ptr[i] = clamp((the_ptr[i] + dclev_and_rounding) >> s, max_val);
 		}
 	}
 }
@@ -128,10 +133,12 @@ void nlt_forward_linear(xs_image_t* im, const uint8_t Bw)
 		assert(im->sy[c] == 1 || im->sy[c] == 2);
 		const size_t sample_count = (size_t)(im->width / im->sx[c]) * (size_t)(im->height / im->sy[c]);
 		xs_data_in_t* the_ptr = im->comps_array[c];
-		for (size_t i = sample_count; i != 0; --i)
+#ifdef JXS_ENABLE_OPENMP
+#pragma omp parallel for schedule(static) if(sample_count >= 262144 && omp_get_level() == 0)
+#endif
+		for (ptrdiff_t i = 0; i < (ptrdiff_t)sample_count; ++i)
 		{
-			*the_ptr = (*the_ptr << s) - dclev;
-			++the_ptr;
+			the_ptr[i] = (the_ptr[i] << s) - dclev;
 		}
 	}
 }

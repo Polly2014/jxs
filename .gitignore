@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Local evaluation builds, downloaded media, and generated measurements.
+build*/
+build*.log
+test-data/
+benchmark-results/
+__pycache__/

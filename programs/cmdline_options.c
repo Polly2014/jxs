@@ -56,26 +56,16 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <errno.h>
+#include <limits.h>
 
 #include "getopt.h"
 #include "libjxs.h"
 
 #include "cmdline_options.h"
 
-// #ifndef _MSC_VER
-// static inline int strcat_s(char* restrict dest, size_t destsz, const char* restrict src)
-// {
-// 	if (dest == 0 || src == 0)
-// 	{
-// 		return -1;
-// 	}
-// 	strcat(dest, src);
-// 	return 0;
-// }
-// #endif
-
 const char* active_options[] = {
-	  "c:Dw:h:d:f:n:v",
+	  "c:Dw:h:d:f:n:j:v",
 	  "Df:n:vF:",
 };
 
@@ -93,6 +83,7 @@ struct
 
 	{'f', "-f <nb>: index of first image of sequence (N/A for single file operation)\n"},
 	{'n', "-n <nb>: number of images from sequence to process (N/A for single file operation)\n"},
+	{'j', "-j <threads>: parallel sequence encoder workers (1-256; default 1; requires OpenMP build and explicit -n)\n"},
 	{'v', "-v: verbose information (use multiple times to increase verbosity)\n"},
 
 	{'F', "-F <fragments_csv>: write out codestream fragment information into a CSV\n"},
@@ -201,6 +192,7 @@ JXS_SHARED_LIB_API int cmdline_options_parse(int argc, char **argv, cmdline_opt_
 	options->depth = -1;
 	options->sequence_first = 0;
 	options->sequence_n = -1;
+	options->jobs = 1;
 	options->verbose = 0;
 	options->dump_xs_cfg = 0;
 	memset(options->fragments_csv_file, 0, sizeof(options->fragments_csv_file));
@@ -216,13 +208,16 @@ JXS_SHARED_LIB_API int cmdline_options_parse(int argc, char **argv, cmdline_opt_
 		}
 		case 'c':
 		{
-			int ok = strcat_s(options->xs_config_string, sizeof(options->xs_config_string) - 2, optarg);
-			ok |= strcat_s(options->xs_config_string, sizeof(options->xs_config_string) - 1, ";");
-			if (ok != 0)
+			const size_t used = strlen(options->xs_config_string);
+			const size_t added = strlen(optarg);
+			if (added > sizeof(options->xs_config_string) - used - 2)
 			{
 				fprintf(stderr, "Error while handling -c option\n");
 				return -1;
 			}
+			memcpy(options->xs_config_string + used, optarg, added);
+			options->xs_config_string[used + added] = ';';
+			options->xs_config_string[used + added + 1] = '\0';
 			break;
 		}
 		case 'D':
@@ -246,13 +241,33 @@ JXS_SHARED_LIB_API int cmdline_options_parse(int argc, char **argv, cmdline_opt_
 			break;
 		}
 		case 'f':
-		{
-			options->sequence_first = atoi(optarg);
-			break;
-		}
 		case 'n':
 		{
-			options->sequence_n = atoi(optarg);
+			char* end;
+			errno = 0;
+			const long value = strtol(optarg, &end, 10);
+			if (errno || end == optarg || *end || value < INT_MIN || value > INT_MAX)
+			{
+				fprintf(stderr, "Invalid -%c value: expected a representable integer\n", opt);
+				return -1;
+			}
+			if (opt == 'f')
+				options->sequence_first = (int)value;
+			else
+				options->sequence_n = (int)value;
+			break;
+		}
+		case 'j':
+		{
+			char* end;
+			errno = 0;
+			const long jobs = strtol(optarg, &end, 10);
+			if (errno || end == optarg || *end || jobs < 1 || jobs > 256)
+			{
+				fprintf(stderr, "Invalid -j value: expected an integer from 1 to 256\n");
+				return -1;
+			}
+			options->jobs = (int)jobs;
 			break;
 		}
 		case 'v':
