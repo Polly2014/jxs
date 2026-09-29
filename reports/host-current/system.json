@@ -1,0 +1,30 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "arm",
+  "cpu_model": "Apple M1",
+  "physical_cores": 8,
+  "logical_cpus": 8,
+  "ram_bytes": 17179869184,
+  "scope": "host-only; RK3588 and physical LAN not tested",
+  "git_commit": "79db3fb5af84577e269df5d67671b4da75ac341d",
+  "cmake": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_C_COMPILER": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc",
+    "CMAKE_C_FLAGS": "-I/Users/polly/Downloads/Sublime_Workspace/Zola_Workspace/www.polly.com/X-Workspace/jxs/build-host-compat",
+    "CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "JXS_ENABLE_OPENMP": "OFF",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+  "openmp_status": "attempted; unavailable on AppleClang 21 because FindOpenMP could not find OpenMP_C_FLAGS/OpenMP_C_LIB_NAMES",
+  "compatibility_note": "macOS build used a generated malloc.h shim that includes stdlib.h; codec source was unchanged",
+  "encoder_sha256": "6d06b0130019027f7666192f9886f5d9b37e571d63d202df6db7e026f52919f5",
+  "decoder_sha256": "2c96598539c21aa77875cf30f85bf2e487f94174e4b3137502ccb056dffd958a",
+  "warmups": 3,
+  "repeats": 10,
+  "threads": [
+    1
+  ],
+  "timing_scope": "separate CLI wall times including startup, file I/O, context setup, and codec"
+}

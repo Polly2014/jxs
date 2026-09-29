@@ -1,0 +1,262 @@
+{
+  "host_scope": "host-only",
+  "rk3588_tested": false,
+  "physical_lan_tested": false,
+  "target": {
+    "width": 3840,
+    "height": 2160,
+    "format": "YUV444P8",
+    "rate_bpp": 4,
+    "fps": 60,
+    "end_to_end_p99_limit_ms": 50
+  },
+  "statistics": {
+    "percentile_method": "nearest-rank",
+    "samples_per_phase": 10,
+    "caveat": "With 10 samples nearest-rank P95/P99 may collapse to the maximum; this is a screening run, not tail-latency qualification"
+  },
+  "measurement_limits": {
+    "sustained_pacing_tested": false,
+    "queue_growth_tested": false,
+    "rk3588_tested": false,
+    "physical_lan_tested": false
+  },
+  "groups": [
+    {
+      "case": "gradient",
+      "configuration": "full-width",
+      "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2",
+      "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;",
+      "threads": 1,
+      "codestream_bytes": 4147200,
+      "effective_bpp": 4.0,
+      "encode": {
+        "count": 10,
+        "min_seconds": 1.1839974580798298,
+        "mean_seconds": 1.2066882665967569,
+        "p50_seconds": 1.2110816249623895,
+        "p95_seconds": 1.2360885408706963,
+        "p99_seconds": 1.2360885408706963,
+        "max_seconds": 1.2360885408706963
+      },
+      "decode": {
+        "count": 10,
+        "min_seconds": 0.7861301249358803,
+        "mean_seconds": 0.9320578208193183,
+        "p50_seconds": 0.8359820831101388,
+        "p95_seconds": 1.5215879580937326,
+        "p99_seconds": 1.5215879580937326,
+        "max_seconds": 1.5215879580937326
+      },
+      "combined_p50_seconds": 2.0470637080725282,
+      "combined_p99_bound_seconds": 2.757676498964429,
+      "equivalent_fps": 0.48850458149227743,
+      "optimistic_two_stage_fps": 0.8257081763841106,
+      "p50_vs_50ms_factor": 40.941274161450565,
+      "throughput_shortfall_factor": 122.8238224843517
+    },
+    {
+      "case": "gradient",
+      "configuration": "columns",
+      "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1",
+      "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;",
+      "threads": 1,
+      "codestream_bytes": 4147200,
+      "effective_bpp": 4.0,
+      "encode": {
+        "count": 10,
+        "min_seconds": 1.4689670000225306,
+        "mean_seconds": 1.5475899750366806,
+        "p50_seconds": 1.4759385420475155,
+        "p95_seconds": 1.7356690000742674,
+        "p99_seconds": 1.7356690000742674,
+        "max_seconds": 1.7356690000742674
+      },
+      "decode": {
+        "count": 10,
+        "min_seconds": 0.7693871660158038,
+        "mean_seconds": 0.7993272040970624,
+        "p50_seconds": 0.7832182499114424,
+        "p95_seconds": 0.8922715000808239,
+        "p99_seconds": 0.8922715000808239,
+        "max_seconds": 0.8922715000808239
+      },
+      "combined_p50_seconds": 2.259156791958958,
+      "combined_p99_bound_seconds": 2.6279405001550913,
+      "equivalent_fps": 0.4426430266191843,
+      "optimistic_two_stage_fps": 0.6775349863909216,
+      "p50_vs_50ms_factor": 45.18313583917916,
+      "throughput_shortfall_factor": 135.54940751753747
+    },
+    {
+      "case": "natural",
+      "configuration": "full-width",
+      "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2",
+      "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;",
+      "threads": 1,
+      "codestream_bytes": 4147200,
+      "effective_bpp": 4.0,
+      "encode": {
+        "count": 10,
+        "min_seconds": 1.3937460000161082,
+        "mean_seconds": 1.4077829042449594,
+        "p50_seconds": 1.395160541171208,
+        "p95_seconds": 1.4836176249664277,
+        "p99_seconds": 1.4836176249664277,
+        "max_seconds": 1.4836176249664277
+      },
+      "decode": {
+        "count": 10,
+        "min_seconds": 0.8185901660472155,
+        "mean_seconds": 0.8330884791910649,
+        "p50_seconds": 0.8334928748663515,
+        "p95_seconds": 0.8537627090699971,
+        "p99_seconds": 0.8537627090699971,
+        "max_seconds": 0.8537627090699971
+      },
+      "combined_p50_seconds": 2.2286534160375595,
+      "combined_p99_bound_seconds": 2.3373803340364248,
+      "equivalent_fps": 0.4487014413295149,
+      "optimistic_two_stage_fps": 0.7167633906564767,
+      "p50_vs_50ms_factor": 44.57306832075119,
+      "throughput_shortfall_factor": 133.71920496225357
+    },
+    {
+      "case": "natural",
+      "configuration": "columns",
+      "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1",
+      "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;",
+      "threads": 1,
+      "codestream_bytes": 4147200,
+      "effective_bpp": 4.0,
+      "encode": {
+        "count": 10,
+        "min_seconds": 1.6652417920995504,
+        "mean_seconds": 1.715806683129631,
+        "p50_seconds": 1.6778814159333706,
+        "p95_seconds": 1.8797803751658648,
+        "p99_seconds": 1.8797803751658648,
+        "max_seconds": 1.8797803751658648
+      },
+      "decode": {
+        "count": 10,
+        "min_seconds": 0.7972735411021858,
+        "mean_seconds": 0.8066842496162281,
+        "p50_seconds": 0.804300791118294,
+        "p95_seconds": 0.8257432908285409,
+        "p99_seconds": 0.8257432908285409,
+        "max_seconds": 0.8257432908285409
+      },
+      "combined_p50_seconds": 2.4821822070516646,
+      "combined_p99_bound_seconds": 2.7055236659944057,
+      "equivalent_fps": 0.40287131104198826,
+      "optimistic_two_stage_fps": 0.5959896751366787,
+      "p50_vs_50ms_factor": 49.64364414103329,
+      "throughput_shortfall_factor": 148.93093242309988
+    },
+    {
+      "case": "high-frequency",
+      "configuration": "full-width",
+      "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2",
+      "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;",
+      "threads": 1,
+      "codestream_bytes": 4147200,
+      "effective_bpp": 4.0,
+      "encode": {
+        "count": 10,
+        "min_seconds": 1.5268369999248534,
+        "mean_seconds": 1.61274969575461,
+        "p50_seconds": 1.5354336658492684,
+        "p95_seconds": 2.2151863328181207,
+        "p99_seconds": 2.2151863328181207,
+        "max_seconds": 2.2151863328181207
+      },
+      "decode": {
+        "count": 10,
+        "min_seconds": 0.8472643329296261,
+        "mean_seconds": 0.8703573457663879,
+        "p50_seconds": 0.8582233749330044,
+        "p95_seconds": 0.9335782919079065,
+        "p99_seconds": 0.9335782919079065,
+        "max_seconds": 0.9335782919079065
+      },
+      "combined_p50_seconds": 2.393657040782273,
+      "combined_p99_bound_seconds": 3.1487646247260273,
+      "equivalent_fps": 0.41777079295920744,
+      "optimistic_two_stage_fps": 0.6512817989091616,
+      "p50_vs_50ms_factor": 47.873140815645456,
+      "throughput_shortfall_factor": 143.61942244693637
+    },
+    {
+      "case": "high-frequency",
+      "configuration": "columns",
+      "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1",
+      "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;",
+      "threads": 1,
+      "codestream_bytes": 4147200,
+      "effective_bpp": 4.0,
+      "encode": {
+        "count": 10,
+        "min_seconds": 1.8086435000877827,
+        "mean_seconds": 1.9118740998907016,
+        "p50_seconds": 1.8415189580991864,
+        "p95_seconds": 2.154149416834116,
+        "p99_seconds": 2.154149416834116,
+        "max_seconds": 2.154149416834116
+      },
+      "decode": {
+        "count": 10,
+        "min_seconds": 0.8393496668431908,
+        "mean_seconds": 1.0335115083958955,
+        "p50_seconds": 1.0342955000232905,
+        "p95_seconds": 1.370266875019297,
+        "p99_seconds": 1.370266875019297,
+        "max_seconds": 1.370266875019297
+      },
+      "combined_p50_seconds": 2.875814458122477,
+      "combined_p99_bound_seconds": 3.524416291853413,
+      "equivalent_fps": 0.3477275792864838,
+      "optimistic_two_stage_fps": 0.543029978378392,
+      "p50_vs_50ms_factor": 57.51628916244954,
+      "throughput_shortfall_factor": 172.54886748734862
+    }
+  ],
+  "best": {
+    "case": "gradient",
+    "configuration": "full-width",
+    "requested_config": "p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2",
+    "resolved_config": "p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;",
+    "threads": 1,
+    "codestream_bytes": 4147200,
+    "effective_bpp": 4.0,
+    "encode": {
+      "count": 10,
+      "min_seconds": 1.1839974580798298,
+      "mean_seconds": 1.2066882665967569,
+      "p50_seconds": 1.2110816249623895,
+      "p95_seconds": 1.2360885408706963,
+      "p99_seconds": 1.2360885408706963,
+      "max_seconds": 1.2360885408706963
+    },
+    "decode": {
+      "count": 10,
+      "min_seconds": 0.7861301249358803,
+      "mean_seconds": 0.9320578208193183,
+      "p50_seconds": 0.8359820831101388,
+      "p95_seconds": 1.5215879580937326,
+      "p99_seconds": 1.5215879580937326,
+      "max_seconds": 1.5215879580937326
+    },
+    "combined_p50_seconds": 2.0470637080725282,
+    "combined_p99_bound_seconds": 2.757676498964429,
+    "equivalent_fps": 0.48850458149227743,
+    "optimistic_two_stage_fps": 0.8257081763841106,
+    "p50_vs_50ms_factor": 40.941274161450565,
+    "throughput_shortfall_factor": 122.8238224843517
+  },
+  "decision": {
+    "status": "reject-current-cli",
+    "combined_p50_seconds": 2.0470637080725282,
+    "reason": "encode P50 + decode P50 exceeds the 100 ms screening gate"
+  }
+}
