@@ -1,0 +1,48 @@
+{
+  "source": {
+    "url": "https://images-assets.nasa.gov/image/PIA04921/PIA04921~orig.jpg",
+    "sha256": "4c2bc14dccd339b73c55cba14d3c18a63c4609041c375be18c442ee13153a274"
+  },
+  "libraries": {
+    "numpy": "2.4.4",
+    "pillow": "12.1.0"
+  },
+  "cases": [
+    {
+      "name": "gradient",
+      "input": "gradient.yuv8p",
+      "width": 3840,
+      "height": 2160,
+      "depth": 8,
+      "format": "YUV444P8",
+      "bytes": 24883200,
+      "sha256": "af5f4ed4c6096ff09df5fc724bdf231768557ca3ab4a562074236e88928440c5",
+      "operation": "deterministic gradients"
+    },
+    {
+      "name": "natural",
+      "input": "natural.yuv8p",
+      "width": 3840,
+      "height": 2160,
+      "depth": 8,
+      "format": "YUV444P8",
+      "bytes": 24883200,
+      "sha256": "ff01cf140ed99e89dec99553cba67562fd8ff40ac709894eee03f541938acdfd",
+      "operation": "NASA/JPL PIA04921 center-crop/resample",
+      "conversion": "Pillow RGB to YCbCr (JPEG/JFIF convention), full-range uint8 planes"
+    },
+    {
+      "name": "high-frequency",
+      "input": "high-frequency.yuv8p",
+      "width": 3840,
+      "height": 2160,
+      "depth": 8,
+      "format": "YUV444P8",
+      "bytes": 24883200,
+      "sha256": "71e8bf147e736d20302e4278bdeba1e1caa76f780f9aab055b14e462dc466c5e",
+      "operation": "NumPy PCG64 seed 3588",
+      "seed": 3588,
+      "generator": "numpy.random.default_rng (PCG64)"
+    }
+  ]
+}

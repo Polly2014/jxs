@@ -1,0 +1,25 @@
+mpp[35772]: mpp_platform: client 4 driver is not ready!
+mpp[35772]: mpp_platform: client 12 driver is not ready!
+mpp[35772]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[35772]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[35772]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[35772]: mpp_info: mpp version: unknown mpp version for missing VCS info
+DIAG frame=0 submit_all_ms=2.190
+DIAG tile=0 poll_ms=2.699 dequeue_ms=0.001 copy_ms=82.579 output_enqueue_ms=0.008 input_reclaim_ms=0.016 total_ms=85.303
+DIAG tile=1 poll_ms=0.003 dequeue_ms=0.002 copy_ms=81.990 output_enqueue_ms=0.009 input_reclaim_ms=0.019 total_ms=82.023
+DIAG tile=2 poll_ms=0.003 dequeue_ms=0.002 copy_ms=80.655 output_enqueue_ms=0.010 input_reclaim_ms=0.017 total_ms=80.687
+DIAG tile=3 poll_ms=0.003 dequeue_ms=0.001 copy_ms=81.962 output_enqueue_ms=0.008 input_reclaim_ms=0.014 total_ms=81.988
+DIAG frame=1 submit_all_ms=0.424
+DIAG tile=0 poll_ms=3.497 dequeue_ms=0.007 copy_ms=79.878 output_enqueue_ms=0.016 input_reclaim_ms=0.032 total_ms=83.430
+DIAG tile=1 poll_ms=0.006 dequeue_ms=0.003 copy_ms=77.304 output_enqueue_ms=0.013 input_reclaim_ms=0.031 total_ms=77.357
+DIAG tile=2 poll_ms=0.005 dequeue_ms=0.003 copy_ms=76.416 output_enqueue_ms=0.015 input_reclaim_ms=0.028 total_ms=76.467
+DIAG tile=3 poll_ms=0.004 dequeue_ms=0.003 copy_ms=77.364 output_enqueue_ms=0.012 input_reclaim_ms=0.029 total_ms=77.411
+DIAG frame=2 submit_all_ms=0.485
+DIAG tile=0 poll_ms=3.515 dequeue_ms=0.002 copy_ms=77.941 output_enqueue_ms=0.007 input_reclaim_ms=0.015 total_ms=81.480
+DIAG tile=1 poll_ms=0.004 dequeue_ms=0.002 copy_ms=77.736 output_enqueue_ms=0.007 input_reclaim_ms=0.020 total_ms=77.769
+DIAG tile=2 poll_ms=0.003 dequeue_ms=0.003 copy_ms=76.336 output_enqueue_ms=0.007 input_reclaim_ms=0.019 total_ms=76.369
+DIAG tile=3 poll_ms=0.002 dequeue_ms=0.002 copy_ms=77.339 output_enqueue_ms=0.006 input_reclaim_ms=0.015 total_ms=77.364
+RESULT mode=paced frames=2 warmups=1 target_fps=60.000 quality=50 queue_capacity=2 jpeg_bytes=768311 payload_mbps_60=368.789 output_fps=3.173 encode_p50_ms=15.954 encode_p95_ms=15.987 encode_p99_ms=15.987 encode_max_ms=15.987 decode_assemble_p50_ms=313.667 decode_assemble_p95_ms=315.426 decode_assemble_p99_ms=315.426 decode_assemble_max_ms=315.426 queue_p50_ms=0.137 queue_p95_ms=300.429 queue_p99_ms=300.429 queue_max_ms=300.429 latency_p50_ms=331.551 latency_p95_ms=630.050 latency_p99_ms=630.050 latency_max_ms=630.050 schedule_late_p99_ms=0.056 schedule_late_max_ms=0.056 max_inflight=2 blocked_frames=0 producer_wait_ms=0.000 drops=0 decode_errors=0 checksum_first=29a111b6ccb56ac5 checksum_last=29a111b6ccb56ac5 checksum_mismatch=0 format=NV24_444 csv=smoke-diag-nosync.csv
+policy0=ondemand
+policy4=ondemand
+policy6=ondemand

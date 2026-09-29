@@ -1,0 +1,8 @@
+exit_status=0
+qdisc=qdisc noqueue 0: root refcnt 2 
+/sys/devices/system/cpu/cpufreq/policy0/scaling_governor=ondemand
+/sys/devices/system/cpu/cpufreq/policy4/scaling_governor=ondemand
+/sys/devices/system/cpu/cpufreq/policy6/scaling_governor=ondemand
+/sys/class/devfreq/dmc/governor=dmc_ondemand
+net.core.rmem_max=212992
+net.core.wmem_max=212992

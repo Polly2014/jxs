@@ -1,0 +1,32 @@
+{
+  "accepted": false,
+  "app_bytes_received": 14154462000,
+  "app_bytes_sent": 14154462000,
+  "datagrams_received": 10152000,
+  "datagrams_sent": 10152000,
+  "decode_assemble_p99_ms": 23.660875,
+  "encode_p99_ms": 16.372417,
+  "failures": [
+    "output_fps_below_60",
+    "latency_p99_not_below_50ms",
+    "schedule_lateness_accumulated"
+  ],
+  "first_frame": 0,
+  "last_frame": 17999,
+  "latency_max_ms": 72.387,
+  "latency_p50_ms": 56.109375,
+  "latency_p95_ms": 69.118875,
+  "latency_p99_ms": 69.476459,
+  "network_p99_ms": 11.138167,
+  "output_fps": 52.47331005101057,
+  "row_count": 18000,
+  "sampled_checksum_count": 181,
+  "sampled_checksum_unique": 1,
+  "schedule_late_first_ms": 0.053298,
+  "schedule_late_last_ms": 43014.018617,
+  "schedule_late_max_ms": 43014.045318,
+  "schedule_late_p99_ms": 42422.695844,
+  "schedule_lateness_growth_ms": 43013.965319,
+  "send_p99_ms": 8.859375,
+  "source_csv": "benchmark-results/rk3588-jpeg444-udp-loopback-20260929/data/soak-5m-paced.csv"
+}

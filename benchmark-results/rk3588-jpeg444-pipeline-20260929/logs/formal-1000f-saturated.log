@@ -1,0 +1,10 @@
+mpp[39932]: mpp_platform: client 4 driver is not ready!
+mpp[39932]: mpp_platform: client 12 driver is not ready!
+mpp[39932]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[39932]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[39932]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[39932]: mpp_info: mpp version: unknown mpp version for missing VCS info
+RESULT mode=saturated frames=1000 warmups=60 target_fps=0.000 quality=50 queue_capacity=2 jpeg_bytes=768311 payload_mbps_60=368.789 output_fps=55.452 encode_p50_ms=15.225 encode_p95_ms=15.364 encode_p99_ms=15.567 encode_max_ms=19.048 decode_assemble_p50_ms=16.992 decode_assemble_p95_ms=17.151 decode_assemble_p99_ms=18.045 decode_assemble_max_ms=21.342 queue_p50_ms=2.769 queue_p95_ms=2.937 queue_p99_ms=3.560 queue_max_ms=7.054 latency_p50_ms=34.999 latency_p95_ms=35.266 latency_p99_ms=36.586 latency_max_ms=39.329 schedule_late_p99_ms=0.000 schedule_late_max_ms=0.000 max_inflight=2 blocked_frames=997 producer_wait_ms=2771.673 drops=0 decode_errors=0 checksum_first=29a111b6ccb56ac5 checksum_last=29a111b6ccb56ac5 checksum_mismatch=0 format=NV24_444 csv=formal-1000f-saturated.csv
+policy0=ondemand
+policy4=ondemand
+policy6=ondemand

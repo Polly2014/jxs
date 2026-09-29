@@ -1,0 +1,31 @@
+{
+  "accepted": false,
+  "app_bytes_received": 786359000,
+  "app_bytes_sent": 786359000,
+  "datagrams_received": 564000,
+  "datagrams_sent": 564000,
+  "decode_assemble_p99_ms": 23.553542,
+  "encode_p99_ms": 16.262167,
+  "failures": [
+    "output_fps_below_60",
+    "latency_p99_not_below_50ms"
+  ],
+  "first_frame": 0,
+  "last_frame": 999,
+  "latency_max_ms": 71.080625,
+  "latency_p50_ms": 58.744875,
+  "latency_p95_ms": 68.819334,
+  "latency_p99_ms": 69.373208,
+  "network_p99_ms": 10.570875,
+  "output_fps": 50.029352574220304,
+  "row_count": 1000,
+  "sampled_checksum_count": 11,
+  "sampled_checksum_unique": 1,
+  "schedule_late_first_ms": 0.0,
+  "schedule_late_last_ms": 0.0,
+  "schedule_late_max_ms": 0.0,
+  "schedule_late_p99_ms": 0.0,
+  "schedule_lateness_growth_ms": 0.0,
+  "send_p99_ms": 7.466667,
+  "source_csv": "benchmark-results/rk3588-jpeg444-udp-loopback-20260929/data/formal-saturated.csv"
+}

@@ -1,0 +1,1 @@
+RESULT mode=encode_only tiles=4 quality=50 iterations=180 jpeg_bytes=768311 enc_median_ms=15.079 enc_p95_ms=15.194 dec_median_ms=0.000 dec_p95_ms=0.000 total_median_ms=15.079 total_p95_ms=15.194 fps_from_median=66.318 sampling=444 

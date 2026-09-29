@@ -1,0 +1,17 @@
+phase,configuration,requested_config,resolved_config,parallelism,sample,frames,seconds,fps,sampled_peak_rss_bytes,sampled_peak_threads,output_count,output_bytes
+encode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,1,1,60,83.27942029107362,0.7204661102381755,132546560,1,60,248832000
+encode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,2,1,60,42.21561933285557,1.4212748965476674,262979584,2,60,248832000
+encode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,4,1,60,26.00134150008671,2.3075732457804112,523862016,4,60,248832000
+encode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,8,1,60,21.991267499979585,2.7283556984632966,1045053440,8,60,248832000
+decode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,1,1,60,49.5205143338535,1.2116190796302464,106676224,1,60,1492992000
+decode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,2,1,60,45.09768341598101,1.3304452791191075,106758144,2,60,1492992000
+decode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,4,1,60,42.709661040920764,1.404834375588069,106840064,4,60,1492992000
+decode,full-width,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=0;nly=2,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;fq=8;,8,1,60,44.274217459140345,1.3551905249454181,106987520,8,60,1492992000
+encode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,1,1,60,97.8232269580476,0.6133512649887491,132251648,1,60,248832000
+encode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,2,1,60,50.73423908301629,1.1826332883759658,262537216,2,60,248832000
+encode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,4,1,60,32.297746000112966,1.857714776746035,522174464,4,60,248832000
+encode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,8,1,60,26.49279220798053,2.264766942229893,989036544,8,60,248832000
+decode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,1,1,60,48.631567999953404,1.2337665114984055,106545152,1,60,1492992000
+decode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,2,1,60,47.204533458221704,1.2710643576872316,106348544,2,60,1492992000
+decode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,4,1,60,43.51005699997768,1.3789915283271355,106594304,4,60,1492992000
+decode,columns,p=unrestricted;rate=4;bw=20;fq=8;cpih=none;cw=4;nly=1,p=unrestricted;l=4k-1;s=sublev6bpp;size=4147200;cpih=none;cw=4;fq=8;nly=1;,8,1,60,42.026534541044384,1.4276694630008617,106807296,8,60,1492992000

@@ -1,0 +1,12 @@
+dmc_test_governor=performance dmc_cur=2112000000
+mpp[42502]: mpp_platform: client 4 driver is not ready!
+mpp[42502]: mpp_platform: client 12 driver is not ready!
+mpp[42502]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[42502]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[42502]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[42502]: mpp_info: mpp version: unknown mpp version for missing VCS info
+RESULT mode=saturated frames=1000 warmups=60 target_fps=0.000 quality=50 queue_capacity=2 jpeg_bytes=768311 payload_mbps_60=368.789 output_fps=61.942 encode_p50_ms=14.904 encode_p95_ms=15.026 encode_p99_ms=15.056 encode_max_ms=16.285 decode_assemble_p50_ms=16.108 decode_assemble_p95_ms=16.232 decode_assemble_p99_ms=16.604 decode_assemble_max_ms=20.221 queue_p50_ms=1.203 queue_p95_ms=1.367 queue_p99_ms=2.171 queue_max_ms=5.264 latency_p50_ms=32.228 latency_p95_ms=32.435 latency_p99_ms=34.383 latency_max_ms=36.494 schedule_late_p99_ms=0.000 schedule_late_max_ms=0.000 max_inflight=2 blocked_frames=993 producer_wait_ms=1221.660 drops=0 decode_errors=0 checksum_every=100 checksum_samples=11 checksum_first=29a111b6ccb56ac5 checksum_last=29a111b6ccb56ac5 checksum_mismatch=0 format=NV24_444 csv=formal-core-1000f-saturated-dmc-performance.csv
+policy0=ondemand
+policy4=ondemand
+policy6=ondemand
+dmc_restored=dmc_ondemand

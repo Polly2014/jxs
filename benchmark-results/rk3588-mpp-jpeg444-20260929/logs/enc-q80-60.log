@@ -1,0 +1,435 @@
+mpp[16973]: mpp_platform: client 4 driver is not ready!
+mpp[16973]: mpp_platform: client 12 driver is not ready!
+mpp[16973]: mpi_enc_utils: load cfg file /home/orangepi/mpp-eval-upload-20260929/mpp-jpeg444-4k.json
+mpp[16973]: kmpp_obj: dump obj MppEncArgs   - 0x5583af6068 at mpi_enc_test:
+mpp[16973]: mpp_log: cmd parse result:
+mpp[16973]: mpp_log: input  file name: /home/orangepi/jxs-eval-20260929/test-data/host-4k444/natural.yuv8p
+mpp[16973]: mpp_log: output file name: /dev/null
+mpp[16973]: mpp_log: width      : 3840
+mpp[16973]: mpp_log: height     : 2160
+mpp[16973]: mpp_log: format     : 16
+mpp[16973]: mpp_log: type       : 8
+mpp[16973]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[16973]: mpp_enc: set prep cfg w:h [3840:2160] stride [3840:2160] fmt 16 rotate 0 mirror 0
+mpp[16973]: mpp_enc: set rc fixqp bps [62208000:0:0] fps [60:1:fix] - [60:1:fix] gop 120
+mpp[16973]: mpp_enc: set jpeg qfactor [80:1:99]
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: utils: read_with_pixel_width invalid 24bit color config: hor_stride 3840 is smaller then width 3840 multiply by 4
+mpp[16973]: utils: read_with_pixel_width width  should be defined by pixel count
+mpp[16973]: utils: read_with_pixel_width stride should be defined by byte count
+mpp[16973]: vepu_common: get_vepu_pixel_stride invalid fmt 16
+mpp[16973]: mpi_enc_test: CORE_TIMING frames 60 avg_us 41369 max_us 48792
+mpp[16973]: mpi_enc_test: chn 0 encode 60 frames time 3834 ms delay  48 ms fps 15.65 bps 1561147200
+mpp[16973]: mpi_enc_test: /home/orangepi/mpp-eval-upload-20260929/build-rk3588/test/mpi_enc_test average frame rate 15.65

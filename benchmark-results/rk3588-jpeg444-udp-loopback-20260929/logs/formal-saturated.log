@@ -1,0 +1,7 @@
+mpp[51885]: mpp_platform: client 4 driver is not ready!
+mpp[51885]: mpp_platform: client 12 driver is not ready!
+mpp[51885]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[51885]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[51885]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[51885]: mpp_info: mpp version: unknown mpp version for missing VCS info
+RESULT mode=saturated frames=1000 warmups=30 target_fps=0.000 quality=50 queue_capacity=3 jpeg_bytes=768311 jpeg_payload_mbps_60=368.789 output_fps=50.029 encode_p50_ms=14.901 encode_p95_ms=15.782 encode_p99_ms=16.262 encode_max_ms=17.503 send_p50_ms=3.827 send_p95_ms=5.982 send_p99_ms=7.467 send_max_ms=9.143 network_p50_ms=7.977 network_p95_ms=9.462 network_p99_ms=10.571 network_max_ms=13.703 decode_assemble_p50_ms=20.835 decode_assemble_p95_ms=23.206 decode_assemble_p99_ms=23.554 decode_assemble_max_ms=25.290 latency_p50_ms=58.745 latency_p95_ms=68.819 latency_p99_ms=69.373 latency_max_ms=71.081 schedule_late_p99_ms=0.000 schedule_late_max_ms=0.000 max_inflight=3 blocked_frames=953 producer_wait_ms=4963.808 transport_errors=0 malformed_packets=0 duplicate_packets=0 conflicting_duplicates=0 checksum_every=100 checksum_samples=11 checksum_first=29a111b6ccb56ac5 checksum_last=29a111b6ccb56ac5 checksum_mismatch=0 format=NV24_444 socket_rcvbuf=33554432 socket_sndbuf=33554432 simulated_lan=1 physical_lan=0 csv=/home/orangepi/mpp-eval-upload-20260929/udp-loopback-formal-q3-sender/saturated.csv

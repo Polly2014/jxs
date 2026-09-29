@@ -1,0 +1,8 @@
+mpp[20505]: mpp_platform: client 4 driver is not ready!
+mpp[20505]: mpp_platform: client 12 driver is not ready!
+mpp[20505]: mpi_dec_utils: input file /home/orangepi/mpp-eval-upload-20260929/libjpeg-q80-tile-02.jpg size 359286
+mpp[20505]: mpi_dec_test: mpi_dec_test start
+mpp[20505]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[20505]: mpi_dec_test: 0x55ad438560 mpi_dec_test decoder test start w 3840 h 540 type 8
+mpp[20505]: mpi_dec_test: decode 100 frames time 1394 ms delay   0 ms fps 71.69
+mpp[20505]: mpi_dec_test: test success max memory 0.00 MB

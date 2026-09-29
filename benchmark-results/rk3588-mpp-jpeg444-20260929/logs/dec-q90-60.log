@@ -1,0 +1,8 @@
+mpp[17152]: mpp_platform: client 4 driver is not ready!
+mpp[17152]: mpp_platform: client 12 driver is not ready!
+mpp[17152]: mpi_dec_utils: input file /home/orangepi/mpp-eval-upload-20260929/natural-4k444-q90.jpg size 5050033
+mpp[17152]: mpi_dec_test: mpi_dec_test start
+mpp[17152]: mpp_info: mpp version: unknown mpp version for missing VCS info
+mpp[17152]: mpi_dec_test: 0x55aaa6b560 mpi_dec_test decoder test start w 3840 h 2160 type 8
+mpp[17152]: mpi_dec_test: decode 60 frames time 1266 ms delay   0 ms fps 47.36
+mpp[17152]: mpi_dec_test: test success max memory 0.00 MB

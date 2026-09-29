@@ -1,0 +1,31 @@
+{
+  "accepted": false,
+  "app_bytes_received": 786359000,
+  "app_bytes_sent": 786359000,
+  "datagrams_received": 564000,
+  "datagrams_sent": 564000,
+  "decode_assemble_p99_ms": 16.253708,
+  "encode_p99_ms": 15.90225,
+  "failures": [
+    "output_fps_below_60",
+    "schedule_lateness_accumulated"
+  ],
+  "first_frame": 0,
+  "last_frame": 999,
+  "latency_max_ms": 44.541,
+  "latency_p50_ms": 39.214,
+  "latency_p95_ms": 39.530166,
+  "latency_p99_ms": 40.453875,
+  "network_p99_ms": 8.101042,
+  "output_fps": 50.95829141295114,
+  "row_count": 1000,
+  "sampled_checksum_count": 11,
+  "sampled_checksum_unique": 1,
+  "schedule_late_first_ms": 0.053591,
+  "schedule_late_last_ms": 2953.667274,
+  "schedule_late_max_ms": 2953.667274,
+  "schedule_late_p99_ms": 2923.831741,
+  "schedule_lateness_growth_ms": 2953.613683,
+  "send_p99_ms": 0.852542,
+  "source_csv": "benchmark-results/rk3588-jpeg444-udp-loopback-20260929/data/serial-paced.csv"
+}

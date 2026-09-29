@@ -1,0 +1,14 @@
+Direct per-frame CPU encode/decode loopback, 2026-09-29
+
+Input: natural 3840x2160 YUV444P8
+Codec: libjpeg-turbo, four horizontal tiles, JPEG quality 50, 4:4:4
+CPU affinity: Cortex-A76 cores 4-7
+Warmups: 20
+Measured iterations: 120
+
+RESULT mode=encode_decode tiles=4 quality=50 iterations=120 jpeg_bytes=768311 enc_median_ms=16.043 enc_p95_ms=16.314 dec_median_ms=11.723 dec_p95_ms=11.964 total_median_ms=27.778 total_p95_ms=28.204 fps_from_median=36.000 sampling=444 Y_psnr=36.479 Y_mae=2.719 U_psnr=41.686 U_mae=1.342 V_psnr=44.914 V_mae=0.935
+
+Post-test CPU governor verification:
+/sys/devices/system/cpu/cpufreq/policy0/scaling_governor=ondemand
+/sys/devices/system/cpu/cpufreq/policy4/scaling_governor=ondemand
+/sys/devices/system/cpu/cpufreq/policy6/scaling_governor=ondemand

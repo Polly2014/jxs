@@ -57,3 +57,10 @@ build*.log
 test-data/
 benchmark-results/
 __pycache__/
+tmp/
+
+# Local board credentials and SSH keys.
+.env
+.env.*
+!.env.example
+.secrets/

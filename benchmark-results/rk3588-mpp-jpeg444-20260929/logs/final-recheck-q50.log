@@ -1,0 +1,17 @@
+Final repeatability check, 2026-09-29
+
+RESULT mode=encode_only tiles=4 quality=50 iterations=60 jpeg_bytes=768311 enc_median_ms=14.993 enc_p95_ms=15.142 dec_median_ms=0.000 dec_p95_ms=0.000 total_median_ms=14.993 total_p95_ms=15.142 fps_from_median=66.697 sampling=444
+mpp[23288]: mpi_dec_test: decode 120 frames time 1451 ms delay   0 ms fps 82.69
+mpp[23288]: mpi_dec_test: test success max memory 0.00 MB
+mpp[23289]: mpi_dec_test: decode 120 frames time 1448 ms delay   0 ms fps 82.86
+mpp[23289]: mpi_dec_test: test success max memory 0.00 MB
+mpp[23290]: mpi_dec_test: decode 120 frames time 1454 ms delay   0 ms fps 82.52
+mpp[23290]: mpi_dec_test: test success max memory 0.00 MB
+mpp[23291]: mpi_dec_test: decode 120 frames time 1438 ms delay   0 ms fps 83.44
+mpp[23291]: mpi_dec_test: test success max memory 0.00 MB
+JPEG_SIZE=3840x540 SAMPLING=[(1, 1, 1, 0), (2, 1, 1, 1), (3, 1, 1, 1)]
+
+Post-test CPU governor verification:
+/sys/devices/system/cpu/cpufreq/policy0/scaling_governor=ondemand
+/sys/devices/system/cpu/cpufreq/policy4/scaling_governor=ondemand
+/sys/devices/system/cpu/cpufreq/policy6/scaling_governor=ondemand

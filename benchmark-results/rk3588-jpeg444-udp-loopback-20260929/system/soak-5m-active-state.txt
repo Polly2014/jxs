@@ -1,0 +1,15 @@
+Linux orangepi5plus 6.1.99-rockchip-rk3588 #1.2.2 SMP Mon Aug 31 02:08:15 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+probe_sha256=6345fa64040ad525894e00f2cfc9b3f6e548463cd9455e4f53eaea15e6c08b5a
+input_sha256=ff01cf140ed99e89dec99553cba67562fd8ff40ac709894eee03f541938acdfd
+frames=18000
+warmups=60
+quality=50
+queue_capacity=3
+qdisc=qdisc netem 8007: root refcnt 2 limit 10000 delay 1ms  200us rate 1Gbit
+/sys/devices/system/cpu/cpufreq/policy0/scaling_governor=performance
+/sys/devices/system/cpu/cpufreq/policy4/scaling_governor=performance
+/sys/devices/system/cpu/cpufreq/policy6/scaling_governor=performance
+/sys/class/devfreq/dmc/governor=performance
+dmc_frequency=2112000000
+net.core.rmem_max=16777216
+net.core.wmem_max=16777216

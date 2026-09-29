@@ -1,0 +1,39 @@
+{
+    "codec": {
+        "type": 8
+    },
+    "base": {
+        "low_delay": 0,
+        "smt1_en": 0,
+        "smt3_en": 0
+    },
+    "rc": {
+        "mode": 2,
+        "fps_in_num": 60,
+        "fps_in_denom": 1,
+        "fps_out_num": 60,
+        "fps_out_denom": 1
+    },
+    "prep": {
+        "width": 3840,
+        "height": 2160,
+        "hor_stride": 3840,
+        "ver_stride": 2160,
+        "format": 16,
+        "format_out": 7,
+        "chroma_ds_mode": 0,
+        "range": 1
+    },
+    "jpeg": {
+        "q_mode": 0,
+        "quant": -1,
+        "q_factor": 90,
+        "qf_max": 99,
+        "qf_min": 1
+    },
+    "split": {
+        "mode": 0,
+        "arg": 0,
+        "out": 0
+    }
+}

@@ -1,0 +1,71 @@
+{
+  "scope": "RK3588 native CPU JPEG XS CLI; no network transport",
+  "board": "Orange Pi 5 Plus / RK3588 / 16 GiB",
+  "format_verified": "3840x2160 YUV444P8 1x1/1x1/1x1",
+  "rate_bpp": 4,
+  "threads": 4,
+  "cpu_affinity": "4-7 (Cortex-A76)",
+  "warmups": 1,
+  "samples": [
+    {
+      "sample": 1,
+      "encode_seconds": 1.95490487699999,
+      "decode_seconds": 1.4862751820000994,
+      "combined_seconds": 3.4411800590000894,
+      "encode_peak_threads": 4,
+      "decode_peak_threads": 4,
+      "peak_rss_bytes": 123383808
+    },
+    {
+      "sample": 2,
+      "encode_seconds": 1.9984130909997475,
+      "decode_seconds": 1.5695022439999775,
+      "combined_seconds": 3.567915334999725,
+      "encode_peak_threads": 4,
+      "decode_peak_threads": 4,
+      "peak_rss_bytes": 123936768
+    },
+    {
+      "sample": 3,
+      "encode_seconds": 1.9638800490001813,
+      "decode_seconds": 1.5697245329997713,
+      "combined_seconds": 3.5336045819999526,
+      "encode_peak_threads": 4,
+      "decode_peak_threads": 4,
+      "peak_rss_bytes": 125018112
+    },
+    {
+      "sample": 4,
+      "encode_seconds": 1.9867559530002836,
+      "decode_seconds": 1.528685577000033,
+      "combined_seconds": 3.5154415300003166,
+      "encode_peak_threads": 4,
+      "decode_peak_threads": 4,
+      "peak_rss_bytes": 125288448
+    },
+    {
+      "sample": 5,
+      "encode_seconds": 1.9213526970002022,
+      "decode_seconds": 1.5651163010002165,
+      "combined_seconds": 3.4864689980004187,
+      "encode_peak_threads": 4,
+      "decode_peak_threads": 4,
+      "peak_rss_bytes": 124186624
+    }
+  ],
+  "encode_median_seconds": 1.9638800490001813,
+  "decode_median_seconds": 1.5651163010002165,
+  "combined_median_seconds": 3.5154415300003166,
+  "combined_max_seconds": 3.567915334999725,
+  "optimistic_two_stage_fps": 0.5091960685221604,
+  "target_50ms_factor": 70.30883060000633,
+  "codestream_bytes": 4147200,
+  "input_sha256": "ff01cf140ed99e89dec99553cba67562fd8ff40ac709894eee03f541938acdfd",
+  "temperature_millic_before": {
+    "temp": 39769
+  },
+  "temperature_millic_after": {
+    "temp": 47153
+  },
+  "network_tested": false
+}

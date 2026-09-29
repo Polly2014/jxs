@@ -1,0 +1,52 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "arm",
+  "cpu_model": "Apple M1",
+  "physical_cores": 8,
+  "logical_cpus": 8,
+  "ram_bytes": 17179869184,
+  "scope": "host-only; RK3588 and physical LAN not tested",
+  "git_commit": "73d89bf702396f54155b0631bfeaf5a2ef576b5a",
+  "cmake": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_C_COMPILER": "/opt/homebrew/opt/llvm/bin/clang",
+    "CMAKE_C_FLAGS": "-I/Users/polly/Downloads/Sublime_Workspace/Zola_Workspace/www.polly.com/X-Workspace/jxs/build-host-compat -I/opt/homebrew/opt/libomp/include",
+    "CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "JXS_ENABLE_OPENMP": "ON",
+    "OpenMP_C_FLAGS": "-fopenmp",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "compiler_version": "Homebrew clang version 22.1.4\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /opt/homebrew/Cellar/llvm/22.1.4/bin\nConfiguration file: /opt/homebrew/Cellar/llvm/22.1.4/etc/clang/arm64-apple-darwin25.cfg",
+  "openmp_status": "enabled with Homebrew LLVM 22.1.4 and libomp 22.1.4",
+  "compatibility_note": "macOS build used a generated malloc.h shim that includes stdlib.h; codec source was unchanged",
+  "encoder_sha256": "f9e6efec4edc0a156a31164de41823a08012689533ccbbc95e68fd2d0821b51b",
+  "decoder_sha256": "e8cce0b486cff20877b7a858e196e844347916a1c9b0f3f3622be1aedb899cbe",
+  "libomp_linkage": "/Users/polly/Downloads/Sublime_Workspace/Zola_Workspace/www.polly.com/X-Workspace/jxs/build-host-openmp/bin/jxs_encoder:\n\t/opt/homebrew/opt/libomp/lib/libomp.dylib (compatibility version 5.0.0, current version 5.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+  "frames": 60,
+  "workers": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "threads": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "warmups": 0,
+  "repeats": 1,
+  "configurations": [
+    "columns",
+    "full-width"
+  ],
+  "throughput_scope": "batch CLI wall time; decoder includes YUV file output; optimistic pipeline is not simultaneous",
+  "partial_reports": [
+    "/Users/polly/Downloads/Sublime_Workspace/Zola_Workspace/www.polly.com/X-Workspace/jxs/test-data/host-4k444/parallel-work/throughput-full",
+    "/Users/polly/Downloads/Sublime_Workspace/Zola_Workspace/www.polly.com/X-Workspace/jxs/test-data/host-4k444/parallel-work/throughput-columns"
+  ],
+  "serial_baseline_report": "/Users/polly/Downloads/Sublime_Workspace/Zola_Workspace/www.polly.com/X-Workspace/jxs/reports/host-current",
+  "serial_baseline_summary_sha256": "ba1da89159285cc095d9000827b116baa210ec4fac5e9f205034924141739d76"
+}
